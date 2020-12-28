@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour {
 	{
 		Home,
 		PilihanLevel,
-		DesainLevel
+		DesainLevel,
+		Quiz1,
+		Quiz2,
+		Quiz3,
+		Quiz4,
+		Quiz5
 	}
 
 	public List<string> sceneList;
