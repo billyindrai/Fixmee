@@ -1,14 +1,16 @@
 {
-	"name": "L1",
+	"name": "1",
 	"maxScore": 1000,
-	"numRows": 3,
-	"numColumns": 1,
-	"botPos": {"x": 0, "y": 0},
+	"numRows": 4,
+	"numColumns": 5,
+	"botPos": {"x": 0, "y": 4},
 	"board":
 	[
-		[{"height": 0, "lightable": false, "position": {"x":0, "y":0}}],
-		[{"height": 0, "lightable": false, "position": {"x":1, "y":0}}],
-		[{"height": 0, "lightable": true, "position": {"x":2, "y":0}}]
+		[{"height": -15, "lightable": false, "position": {"x":0, "y":0}},{"height": -15, "lightable": false, "position": {"x":0, "y":1}},{"height": 0, "lightable": false, "position": {"x":0, "y":2}},{"height": 0, "lightable": false, "position": {"x":0, "y":3}},{"height": 0, "lightable": false, "position": {"x":0, "y":4}}],
+		[{"height": 0, "lightable": false, "position": {"x":1, "y":0}},{"height": 0, "lightable": false, "position": {"x":1, "y":1}},{"height": 0, "lightable": false, "position": {"x":1, "y":2}},{"height": -10, "lightable": false, "position": {"x":1, "y":3}},{"height": 0, "lightable": false, "position": {"x":1, "y":4}}],
+		[{"height": 0, "lightable": false, "position": {"x":2, "y":0}},{"height": -10, "lightable": false, "position": {"x":2, "y":1}},{"height": 0, "lightable": false, "position": {"x":2, "y":2}},{"height": 0, "lightable": false, "position": {"x":2, "y":3}},{"height": 0, "lightable": false, "position": {"x":2, "y":4}}],
+		[{"height": 0, "lightable": true, "position": {"x":3, "y":0}},{"height": 0, "lightable": false, "position": {"x":3, "y":1}},{"height": 0, "lightable": false, "position": {"x":3, "y":2}},{"height": -10, "lightable": false, "position": {"x":3, "y":3}},{"height": -10, "lightable": false, "position": {"x":3, "y":4}}]
+		
 	],
 	"availableOps":
 	[
@@ -16,7 +18,18 @@
 			"name": "FWD",
 			"type": "Single",
 			"main": false
-		}
+		},
+		{
+			"name": "TR",
+			"type": "Single",
+			"main": false
+		},
+		{
+			"name": "TL",
+			"type": "Single",
+			"main": false
+		},
+
 		{
 			"name": "LGHT",
 			"type": "Single",
@@ -26,7 +39,7 @@
 			"name": "Main",
 			"type": "Composite",
 			"main": true,
-			"limit": 3
+			"limit": 11
 		}
 	]
 }

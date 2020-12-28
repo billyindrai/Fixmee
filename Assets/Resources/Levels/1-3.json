@@ -1,0 +1,50 @@
+{
+	"name": "3",
+	"maxScore": 1000,
+	"numRows": 5,
+	"numColumns": 5,
+	"botPos": {"x": 0, "y": 4},
+	"board":
+	[
+		[{"height": -10, "lightable": false, "position": {"x":0, "y":0}},{"height": -10, "lightable": false, "position": {"x":0, "y":1}},{"height": -10, "lightable": false, "position": {"x":0, "y":2}},{"height": -10, "lightable": false, "position": {"x":0, "y":3}},{"height": 0, "lightable": false, "position": {"x":0, "y":4}}],
+		[{"height": -10, "lightable": false, "position": {"x":1, "y":0}},{"height": -10, "lightable": false, "position": {"x":1, "y":1}},{"height": -10, "lightable": false, "position": {"x":1, "y":2}},{"height": -10, "lightable": false, "position": {"x":1, "y":3}},{"height": 0, "lightable": false, "position": {"x":1, "y":4}}],
+		[{"height": 0, "lightable": true, "position": {"x":2, "y":0}},{"height": 1, "lightable": false, "position": {"x":2, "y":1}},{"height": 2, "lightable": false, "position": {"x":2, "y":2}},{"height": 1, "lightable": false, "position": {"x":2, "y":3}},{"height": 0, "lightable": false, "position": {"x":2, "y":4}}],
+		[{"height": -10, "lightable": false, "position": {"x":3, "y":0}},{"height": 0, "lightable": false, "position": {"x":3, "y":1}},{"height": -10, "lightable": false, "position": {"x":3, "y":2}},{"height": -10, "lightable": false, "position": {"x":3, "y":3}},{"height": 0, "lightable": false, "position": {"x":3, "y":4}}],
+		[{"height": -10, "lightable": false, "position": {"x":4, "y":0}},{"height": 0, "lightable": false, "position": {"x":4, "y":1}},{"height": , "lightable": false, "position": {"x":4, "y":2}},{"height": 0, "lightable": false, "position": {"x":4, "y":3}},{"height": 0, "lightable": true, "position": {"x":4, "y":4}}]
+		
+	],
+	"availableOps":
+	[
+		{
+			"name": "FWD",
+			"type": "Single",
+			"main": false
+		},
+		{
+			"name": "TR",
+			"type": "Single",
+			"main": false
+		},
+		{
+			"name": "TL",
+			"type": "Single",
+			"main": false
+		},
+		{
+			"name": "LGHT",
+			"type": "Single",
+			"main": false
+		},
+		{
+			"name": "JMP",
+			"type": "Single",
+			"main": false
+		},
+		{
+			"name": "Main",
+			"type": "Composite",
+			"main": true,
+			"limit": 15
+		}
+	]
+}

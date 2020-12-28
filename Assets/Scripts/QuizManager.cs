@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class QuizManager : MonoBehaviour
 
     public GameObject Quizpanel;
     public GameObject GoPanel;
+    public GameObject Play;
+    public GameObject Retry;
 
     public string result;
     
@@ -22,6 +25,8 @@ public class QuizManager : MonoBehaviour
     {
         GoPanel.SetActive(false);
         generateQuestion();
+        Play.SetActive(false);
+        Retry.SetActive(false);
     }
 
     void GameOver()
@@ -29,6 +34,8 @@ public class QuizManager : MonoBehaviour
         Quizpanel.SetActive(false);
         GoPanel.SetActive(true);
         ResultTxt.text = result;
+        Play.SetActive(true);
+        Retry.SetActive(true);
     }
 
     public void correct()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using SimpleJSON;
 
 public class LevelManager : MonoBehaviour 
@@ -108,12 +109,9 @@ public class LevelManager : MonoBehaviour
 					}
 					break;
 			}
-		}
-
-		bController.LevelDef = levelDefinition.Clone();
-
+		}		
+		bController.LevelDef = levelDefinition.Clone();	
 		Resources.UnloadAsset (levelJson);
-
 		//Debug.Log (levelDefinition.ToString());
 	}
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class LevelListItem : MonoBehaviour, IPointerClickHandler {
 
@@ -11,7 +12,8 @@ public class LevelListItem : MonoBehaviour, IPointerClickHandler {
 	public GameManager gManager;
 
 	private string name;
-	private string url;
+	public string url;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +31,6 @@ public class LevelListItem : MonoBehaviour, IPointerClickHandler {
 		url = u;
 		nameText.text = name;
 	}
-
 
 	#region IPointerClickHandler implementation
 	public void OnPointerClick (PointerEventData eventData)

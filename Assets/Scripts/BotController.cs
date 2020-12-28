@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using SimpleJSON;
+
 
 public class BotController : MonoBehaviour {
 
@@ -17,6 +20,8 @@ public class BotController : MonoBehaviour {
 	// Wether it's the main or another function, the operations will be added to the active composite operation
 	private CompositeOperation currentComposite;
 	private int indexOpSelected = -1;
+
+	private LevelListManager listManager;
 
 	public LevelDefinition LevelDef
 	{
@@ -246,8 +251,17 @@ public class BotController : MonoBehaviour {
 
 					if (CheckGameOver ())
 					{
-						// If all the lights are on then there's no need to continue running the processes, it's game over
+						//If all the lights are on then there's no need to continue running the processes, it's game over
 						StopAllCoroutines ();
+						// TextAsset load = Resources.Load<TextAsset> (listManager.chosenLevelUrl);
+						// var level = JSON.Parse (load.text);
+						// var namalvl = level["name"].Value;
+						// 	if(namalvl == "1"){
+						// 		SceneManager.LoadScene("Quiz1");
+						// 	} else if(namalvl == "2"){
+						// 		SceneManager.LoadScene("Quiz2");
+						// 	}
+									
 					}
 				}
 
@@ -262,7 +276,7 @@ public class BotController : MonoBehaviour {
 	/// Everytime an operation is run we checked if it changed the state of the game
 	/// </summary>
 	/// <returns><c>true</c>, if game over was checked, <c>false</c> otherwise.</returns>
-	private bool CheckGameOver()
+	public bool CheckGameOver()
 	{
 		for (int i = 0; i < levelDef.numRows; i++)
 		{
@@ -279,8 +293,22 @@ public class BotController : MonoBehaviour {
 		}
 
 		Debug.Log ("You Win");
-		
-		
+		GameObject listManagerGO = GameObject.Find ("SceneManager");
+		listManager = listManagerGO.GetComponent<LevelListManager> ();
+		TextAsset lvl = Resources.Load<TextAsset> (listManager.chosenLevelUrl);
+		var level = JSON.Parse (lvl.text);
+		var namalvl = level["name"].Value;
+		if(namalvl == "1"){
+			SceneManager.LoadScene("Quiz1");
+		} else if(namalvl == "2"){
+			SceneManager.LoadScene("Quiz2");
+		} else if(namalvl == "3"){
+			SceneManager.LoadScene("Quiz3");
+		} else if(namalvl == "4"){
+			SceneManager.LoadScene("Quiz4");
+		} else if(namalvl == "5"){
+			SceneManager.LoadScene("Quiz5");
+		}
 		return true;
 	}
 }

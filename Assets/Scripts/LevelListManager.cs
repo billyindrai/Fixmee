@@ -51,7 +51,7 @@ public class LevelListManager : MonoBehaviour {
 		LoadLevelList ();
 	}
 
-	private void LoadLevelList()
+	public void LoadLevelList()
 	{
 		TextAsset listAsset = Resources.Load<TextAsset> ("levelList");
 		if (listAsset != null)
@@ -65,7 +65,7 @@ public class LevelListManager : MonoBehaviour {
 				for (int i = 0; i < list.Count; i++)
 				{
 					GameObject itemGO = GameObject.Instantiate (listItem);
-					LevelListItem item = itemGO.GetComponent<LevelListItem> ();
+					LevelListItem item = itemGO.GetComponent<LevelListItem>();
 
 					if (item != null)
 					{
@@ -76,8 +76,8 @@ public class LevelListManager : MonoBehaviour {
 						itemGO.transform.SetParent (grid.transform);
 					}
 				}
-
 			}
 		}
+		
 	}
 }
